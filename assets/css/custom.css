@@ -1008,27 +1008,7 @@ img { max-width: 100%; height: auto; }
 
 /* === RESPONSIVE === */
 @media (max-width: 991px) {
-  .section-padding { padding: 70px 0; }
-  .hero-section { padding-top: 100px; }
-  .hero-stats { gap: 24px; }
   .about-content { padding-left: 0; margin-top: 20px; }
-  .about-highlights { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .timeline { padding-left: 30px; }
-  .timeline::before { left: 8px; }
-  .timeline-marker { left: -26px; width: 12px; height: 12px; }
-}
-
-@media (max-width: 767px) {
-  .section-padding { padding: 50px 0; }
-  .hero-title { font-size: 2rem; }
-  .hero-stats { gap: 20px; }
-  .stat-number, .stat-suffix { font-size: 1.8rem; }
-  .hero-ctas .btn { display: block; width: 100%; margin: 0 0 12px 0 !important; }
-  .hero-badge { display: none; }
-  .advantage-card { padding: 20px 14px; }
-  .advantage-card p { font-size: 0.8rem; }
-  .footer-top .row { gap: 24px; }
 }
 
 /* === SMOOTH SCROLL === */
@@ -1381,70 +1361,6 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   text-align: center;
 }
 
-/* === ADDITIONAL MOBILE OPTIMIZATIONS === */
-@media (max-width: 575px) {
-  .project-metrics {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .metric {
-    min-width: 80px;
-    flex: 1;
-  }
-  .metric-number {
-    font-size: 1.3rem;
-  }
-  .gallery-item {
-    aspect-ratio: 4 / 3;
-  }
-  .org-card {
-    padding: 20px;
-  }
-  .org-card p {
-    font-size: 0.82rem;
-  }
-  .tool-category-card {
-    padding: 20px;
-  }
-  .contact-form-card {
-    padding: 24px;
-  }
-  .hero-section {
-    padding-top: 90px;
-    padding-bottom: 40px;
-  }
-  .section-title {
-    font-size: 1.6rem !important;
-  }
-  .btn-lg {
-    padding: 12px 24px;
-    font-size: 0.9rem;
-    display: block;
-    width: 100%;
-    margin-bottom: 10px !important;
-    margin-right: 0 !important;
-  }
-  .footer-top .col-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 767px) {
-  .gallery-item {
-    aspect-ratio: 4 / 3;
-  }
-  .project-card {
-    padding: 24px;
-  }
-  .testimonial-card {
-    padding: 24px;
-  }
-  .cert-card {
-    padding: 24px;
-  }
-}
-
 /* === TOUCH-FRIENDLY IMPROVEMENTS === */
 @media (hover: none) {
   .service-card:hover,
@@ -1530,4 +1446,127 @@ img[loading="lazy"] {
 .rec-author span {
   font-size: 0.8rem;
   color: var(--gray-500);
+}
+
+
+/* === VIDEO SECTION === */
+.video-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  height: 100%;
+}
+
+.video-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--gray-900);
+}
+
+.video-info {
+  padding: 24px;
+}
+
+.video-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.video-info p {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+/* === CERTIFICATE IMAGE === */
+.cert-image-wrapper {
+  margin-bottom: 16px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.cert-image-wrapper img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-image-wrapper img {
+  transform: scale(1.02);
+}
+
+/* === TOOL SHOWCASE IMAGES === */
+.tool-showcase-img {
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: 10px;
+  transition: var(--transition);
+}
+
+.tool-showcase-img:hover {
+  border-color: var(--emerald);
+  box-shadow: var(--shadow-sm);
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVE VIDEO === */
+@media (max-width: 767px) {
+  .video-info {
+    padding: 16px;
+  }
+
+  .video-info h4 {
+    font-size: 1rem;
+  }
+
+  .tool-showcase-img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 575px) {
+  .video-card:hover {
+    transform: none;
+  }
+}
+
+
+/* === WORK SAMPLES === */
+.work-sample-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+}
+
+.work-sample-item:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.work-sample-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.work-sample-item:hover img {
+  transform: scale(1.02);
 }
