@@ -1601,3 +1601,80 @@ img[loading="lazy"] {
 .tool-logo-item img {
   border-radius: 4px;
 }
+
+
+/* === FORM TOAST NOTIFICATION === */
+.form-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  min-width: 320px;
+  max-width: 420px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: 0 12px 40px rgba(15, 33, 55, 0.18);
+  transform: translateX(calc(100% + 40px));
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+.form-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.form-toast.success {
+  border-left: 4px solid var(--emerald);
+}
+.form-toast.error {
+  border-left: 4px solid #ef4444;
+}
+.form-toast-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.form-toast.success .form-toast-icon { color: var(--emerald); }
+.form-toast.error .form-toast-icon { color: #ef4444; }
+.form-toast-body {
+  flex: 1;
+}
+.form-toast-body strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.form-toast-body p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+.form-toast-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--gray-500);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.form-toast-close:hover {
+  color: var(--navy);
+}
+@media (max-width: 480px) {
+  .form-toast {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    min-width: auto;
+    max-width: none;
+  }
+}
