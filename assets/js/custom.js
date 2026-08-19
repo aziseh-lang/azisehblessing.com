@@ -247,25 +247,7 @@
   }
 
   // === CONTACT FORM HANDLING ===
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = this.querySelector('button[type="submit"]');
-      var originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Message Sent!';
-      btn.disabled = true;
-      btn.style.background = '#10b981';
-      btn.style.borderColor = '#10b981';
-      setTimeout(function() {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-        btn.style.background = '';
-        btn.style.borderColor = '';
-        contactForm.reset();
-      }, 3000);
-    });
-  }
+  // Form submissions handled by Formspree (https://formspree.io/f/xaewlkwp)
 
   // === TYPED.JS EFFECT (optional hero subtitle) ===
   if (typeof Typed !== 'undefined') {
